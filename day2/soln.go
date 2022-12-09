@@ -65,7 +65,6 @@ func Soln2(reader *bufio.Scanner) int {
 			score += 6 + win_score(val)
 		}
 	}
-	fmt.Println(score)
 	return score
 }
 

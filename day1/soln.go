@@ -2,7 +2,6 @@ package day1
 
 import (
 	"bufio"
-	"fmt"
 	"sort"
 	"strconv"
 )
@@ -17,7 +16,7 @@ func (self *gnome) add(food int) {
 	self.food = append(self.food, food)
 }
 
-func Soln1(input *bufio.Scanner) {
+func Soln(input *bufio.Scanner) int {
 	var gnomes []gnome
 	new_gnome := &(gnome{[]int{}, 0})
 
@@ -32,6 +31,5 @@ func Soln1(input *bufio.Scanner) {
 	}
 
 	sort.Slice(gnomes, func(i, j int) bool { return gnomes[i].calsum > gnomes[j].calsum })
-
-	fmt.Println(gnomes[0].calsum + gnomes[1].calsum + gnomes[2].calsum)
+	return gnomes[0].calsum + gnomes[1].calsum + gnomes[2].calsum
 }
