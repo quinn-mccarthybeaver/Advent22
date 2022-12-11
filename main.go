@@ -5,6 +5,8 @@ import (
 	"22advent/day2"
 	"22advent/day3"
 	"22advent/day4"
+	"22advent/day5"
+	"22advent/day6"
 	"bufio"
 	"fmt"
 	"os"
@@ -34,6 +36,10 @@ func main() {
 		fmt.Println(day3.Soln2(scanner))
 	case 4:
 		fmt.Println(day4.Soln2(scanner))
+	case 5:
+		fmt.Println(day5.Soln2(scanner))
+	case 6:
+		fmt.Println(day6.Soln1(scanner))
 	default:
 		fmt.Println("not implemented yet")
 	}
