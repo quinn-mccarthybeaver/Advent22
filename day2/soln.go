@@ -3,10 +3,12 @@ package day2
 import (
 	"bufio"
 	"fmt"
+	"os"
 	"strings"
 )
 
-func Soln1(reader *bufio.Scanner) int {
+func Soln1(file *os.File) int {
+	reader := bufio.NewScanner(file)
 	var lefts []string
 	var rights []string
 	for reader.Scan() {
@@ -46,7 +48,8 @@ func Soln1(reader *bufio.Scanner) int {
 	return score
 }
 
-func Soln2(reader *bufio.Scanner) int {
+func Soln2(file *os.File) int {
+	reader := bufio.NewScanner(file)
 	var lefts []string
 	var rights []string
 	for reader.Scan() {

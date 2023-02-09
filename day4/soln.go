@@ -2,12 +2,15 @@ package day4
 
 import (
 	"bufio"
+	"os"
+
 	// "fmt"
 	"strconv"
 	"strings"
 )
 
-func Soln1(scanner *bufio.Scanner) int {
+func Soln1(file *os.File) int {
+	scanner := bufio.NewScanner(file)
 	var sum int
 	for scanner.Scan() {
 		f := strings.Split(scanner.Text(), ",")
@@ -21,7 +24,8 @@ func Soln1(scanner *bufio.Scanner) int {
 	return sum
 }
 
-func Soln2(scanner *bufio.Scanner) int {
+func Soln2(file *os.File) int {
+	scanner := bufio.NewScanner(file)
 	var sum int
 	for scanner.Scan() {
 		f := strings.Split(scanner.Text(), ",")

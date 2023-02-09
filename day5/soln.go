@@ -3,11 +3,13 @@ package day5
 import (
 	"bufio"
 	"fmt"
+	"os"
 	"strconv"
 	"strings"
 )
 
-func Soln1(scanner *bufio.Scanner) int {
+func Soln1(file *os.File) int {
+	scanner := bufio.NewScanner(file)
 	crates := process_crates(scanner)
 	process_moves(&crates, scanner)
 	for _, val := range crates {
@@ -17,7 +19,8 @@ func Soln1(scanner *bufio.Scanner) int {
 	return 0
 }
 
-func Soln2(scanner *bufio.Scanner) int {
+func Soln2(file *os.File) int {
+	scanner := bufio.NewScanner(file)
 	crates := process_crates(scanner)
 	crates = process_moves1(crates, scanner)
 	for _, val := range crates {

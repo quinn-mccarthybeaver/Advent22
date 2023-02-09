@@ -2,9 +2,11 @@ package day6
 
 import (
 	"bufio"
+	"os"
 )
 
-func Soln1(scanner *bufio.Scanner) int {
+func Soln1(file *os.File) int {
+	scanner := bufio.NewScanner(file)
 	scanner.Scan()
 	line := scanner.Text()
 	var buffer []rune

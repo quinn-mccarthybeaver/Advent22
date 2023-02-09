@@ -7,14 +7,13 @@ import (
 	"22advent/day4"
 	"22advent/day5"
 	"22advent/day6"
-	"bufio"
+	"22advent/day7"
 	"fmt"
 	"os"
 	"strconv"
 )
 
 func main() {
-	scanner := bufio.NewScanner(os.Stdin)
 	if len(os.Args) != 2 {
 		fmt.Println("give a single number as an arg")
 		return
@@ -25,21 +24,33 @@ func main() {
 	day, err = strconv.Atoi(os.Args[1])
 	if err != nil {
 		fmt.Println(err.Error())
+		os.Exit(1)
+	}
+
+	path := fmt.Sprintf("day%d/input", day)
+	file, err := os.Open(path)
+	if err != nil {
+		fmt.Println("unable to open file with error:", err)
+		os.Exit(1)
 	}
 
 	switch day {
 	case 1:
-		fmt.Println(day1.Soln(scanner))
+		fmt.Println(day1.Soln(file))
 	case 2:
-		fmt.Println(day2.Soln2(scanner))
+		fmt.Println(day2.Soln2(file))
 	case 3:
-		fmt.Println(day3.Soln2(scanner))
+		fmt.Println(day3.Soln2(file))
 	case 4:
-		fmt.Println(day4.Soln2(scanner))
+		fmt.Println(day4.Soln2(file))
 	case 5:
-		fmt.Println(day5.Soln2(scanner))
+		fmt.Println(day5.Soln2(file))
 	case 6:
-		fmt.Println(day6.Soln1(scanner))
+		fmt.Println(day6.Soln1(file))
+	case 7:
+		ans1, ans2 := day7.Soln1(file)
+		fmt.Println(ans1)
+		fmt.Println(ans2)
 	default:
 		fmt.Println("not implemented yet")
 	}

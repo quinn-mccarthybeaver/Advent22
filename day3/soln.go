@@ -3,10 +3,12 @@ package day3
 import (
 	"bufio"
 	"fmt"
+	"os"
 	"strings"
 )
 
-func Soln1(scanner *bufio.Scanner) int {
+func Soln1(file *os.File) int {
+	scanner := bufio.NewScanner(file)
 	var satchels []string
 	for scanner.Scan() {
 		satchels = append(satchels, scanner.Text())
@@ -21,7 +23,8 @@ func Soln1(scanner *bufio.Scanner) int {
 	return sum
 }
 
-func Soln2(scanner *bufio.Scanner) int {
+func Soln2(file *os.File) int {
+	scanner := bufio.NewScanner(file)
 	var sum int
 	var place int
 	satchels := make([]string, 3)

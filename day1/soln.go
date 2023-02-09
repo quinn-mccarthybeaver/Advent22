@@ -2,6 +2,7 @@ package day1
 
 import (
 	"bufio"
+	"os"
 	"sort"
 	"strconv"
 )
@@ -16,7 +17,8 @@ func (self *gnome) add(food int) {
 	self.food = append(self.food, food)
 }
 
-func Soln(input *bufio.Scanner) int {
+func Soln(file *os.File) int {
+	input := bufio.NewScanner(file)
 	var gnomes []gnome
 	new_gnome := &(gnome{[]int{}, 0})
 
