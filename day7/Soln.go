@@ -15,7 +15,7 @@ type dir struct {
 	size    int
 }
 
-func Soln1(file *os.File) (int, int) {
+func Soln(file *os.File) (int, int) {
 	scanner := bufio.NewScanner(file)
 	scanner.Scan()
 

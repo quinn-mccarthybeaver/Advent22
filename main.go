@@ -8,6 +8,7 @@ import (
 	"22advent/day5"
 	"22advent/day6"
 	"22advent/day7"
+	"22advent/day8"
 	"fmt"
 	"os"
 	"strconv"
@@ -34,6 +35,9 @@ func main() {
 		os.Exit(1)
 	}
 
+	var ans1 int
+	var ans2 int
+
 	switch day {
 	case 1:
 		fmt.Println(day1.Soln(file))
@@ -48,10 +52,12 @@ func main() {
 	case 6:
 		fmt.Println(day6.Soln1(file))
 	case 7:
-		ans1, ans2 := day7.Soln1(file)
-		fmt.Println(ans1)
-		fmt.Println(ans2)
+		ans1, ans2 = day7.Soln(file)
+	case 8:
+		ans1, ans2 = day8.Soln(file)
 	default:
 		fmt.Println("not implemented yet")
 	}
+	fmt.Println(ans1)
+	fmt.Println(ans2)
 }
