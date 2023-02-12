@@ -9,6 +9,7 @@ import (
 	"22advent/day6"
 	"22advent/day7"
 	"22advent/day8"
+	"22advent/day9"
 	"fmt"
 	"os"
 	"strconv"
@@ -55,6 +56,8 @@ func main() {
 		ans1, ans2 = day7.Soln(file)
 	case 8:
 		ans1, ans2 = day8.Soln(file)
+	case 9:
+		ans1, ans2 = day9.Soln(file)
 	default:
 		fmt.Println("not implemented yet")
 	}
