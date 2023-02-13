@@ -2,6 +2,7 @@ package main
 
 import (
 	"22advent/day1"
+	"22advent/day10"
 	"22advent/day2"
 	"22advent/day3"
 	"22advent/day4"
@@ -58,6 +59,8 @@ func main() {
 		ans1, ans2 = day8.Soln(file)
 	case 9:
 		ans1, ans2 = day9.Soln(file)
+	case 10:
+		ans1, ans2 = day10.Soln(file)
 	default:
 		fmt.Println("not implemented yet")
 	}
