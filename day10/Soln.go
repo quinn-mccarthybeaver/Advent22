@@ -2,6 +2,7 @@ package day10
 
 import (
 	"bufio"
+	"fmt"
 	"os"
 	"strconv"
 	"strings"
@@ -15,11 +16,8 @@ func Soln(file *os.File) (int, int) {
 	for scanner.Scan() {
 		cmd := strings.Fields(scanner.Text())
 
-		switch cmd[0] {
-		case "noop":
-			signals = append(signals, signals[len(signals)-1])
-		case "addx":
-			signals = append(signals, signals[len(signals)-1])
+		signals = append(signals, signals[len(signals)-1])
+		if cmd[0] == "addx" {
 			delta, _ := strconv.Atoi(cmd[1])
 			signals = append(signals, signals[len(signals)-1]+delta)
 		}
@@ -30,5 +28,25 @@ func Soln(file *os.File) (int, int) {
 		res1 += i * signals[i]
 	}
 
+	drawScreen(signals)
+
 	return res1, 0
+}
+
+func drawScreen(signals []int) {
+	line := ""
+	for i := 0; i < 240; i++ {
+		if i%40 == 0 {
+			fmt.Println(line)
+			line = ""
+		}
+
+		if signals[i]-(i%40) >= -1 && signals[i]-(i%40) <= 1 {
+			line = line + "#"
+		} else {
+			line = line + "."
+		}
+	}
+
+	fmt.Println(line)
 }
